@@ -51,7 +51,7 @@ iframe {
 .bar {
     width: 67%;
     background-color: #10121b;
-    background: linear-gradient(45deg, #10121b 0%, #10121b 75%, #db2b39 75%, #db2b39 76%, #10121b 76%, #10121b 80%, #db2b39 80%, #db2b39 82%, #10121b 82%, #10121b 90%, #db2b39 90%);
+    background: linear-gradient(45deg, #10121b 0% 75%, #db2b39 75% 76%, #10121b 76% 80%, #db2b39 80% 82%, #10121b 82% 90%, #db2b39 90%);
     display: flex;
     flex-direction: row;
     position: fixed;
