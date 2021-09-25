@@ -1,0 +1,15 @@
+section {
+    padding: 8px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+h2 {
+    text-transform: capitalize;
+    color: #db2b39;
+    font-size: 2em;
+    margin-bottom: 8px;
+}
