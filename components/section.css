@@ -4,6 +4,7 @@ section {
 
 slot {
     padding-top: 8px;
+    padding-bottom: 8px;
     overflow-x: scroll;
     overflow-y: auto;
 }
@@ -22,4 +23,5 @@ h2 {
     color: #db2b39;
     font-size: 2em;
     margin-bottom: 8px;
+    margin-top: 8px;
 }
