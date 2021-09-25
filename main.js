@@ -1,7 +1,13 @@
 function populate(index) {
     let tags = new Set();
 
-    index = Object.entries(index);
+    let roots = Object.keys(index).sort();
+    new_index = new Object();
+    roots.forEach(root => {
+        new_index[root] = index[root];
+    });
+
+    index = Object.entries(new_index);
 
     index.forEach(series => {
         series[1].tags.forEach(tag => {
