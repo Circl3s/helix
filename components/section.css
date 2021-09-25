@@ -2,6 +2,16 @@ section {
     padding: 8px;
 }
 
+slot {
+    padding-top: 8px;
+    overflow-x: scroll;
+    overflow-y: auto;
+}
+
+slot::-webkit-scrollbar {
+    display: none;
+}
+
 .flex {
     display: flex;
     flex-direction: row;

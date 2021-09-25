@@ -37,6 +37,10 @@ iframe {
     height: 100%;
 }
 
+#sections {
+    width: 67%;
+}
+
 .split {
     display: flex;
     flex-direction: row;
