@@ -7,6 +7,7 @@ slot {
     padding-bottom: 8px;
     overflow-x: scroll;
     overflow-y: auto;
+    scrollbar-width: none;
 }
 
 slot::-webkit-scrollbar {
