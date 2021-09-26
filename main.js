@@ -36,7 +36,7 @@ function populate(index) {
     })
 }
 
-let requestURL = "/index.json";
+let requestURL = "./index.json";
 let request = new XMLHttpRequest();
 request.open("GET", requestURL);
 request.responseType = "json";
