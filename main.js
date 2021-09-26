@@ -36,6 +36,8 @@ function populate(index) {
     })
 }
 
+document.querySelector("#details").setAttribute("src", "./placeholder.html");
+
 let requestURL = "./index.json";
 let request = new XMLHttpRequest();
 request.open("GET", requestURL);
