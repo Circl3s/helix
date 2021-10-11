@@ -11,7 +11,7 @@ class MOTD extends HTMLElement {
         css.setAttribute("rel", "stylesheet");
         css.setAttribute("href", "./components/motd.css");
 
-        let requestURL = "./.git/ORIG_HEAD";
+        let requestURL = "./.git/refs/heads/master";
         let request = new XMLHttpRequest();
         request.open("GET", requestURL);
 
