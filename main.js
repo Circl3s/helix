@@ -36,7 +36,8 @@ function populate(index) {
     })
 }
 
-document.querySelector("#details").setAttribute("src", "./placeholder.html");
+let selected = new URLSearchParams(window.location.search).get("select");
+document.querySelector("#details").setAttribute("src", selected == undefined ? "./placeholder.html" : `details.html?series=${selected}`);
 
 let requestURL = "./index.json";
 let request = new XMLHttpRequest();
