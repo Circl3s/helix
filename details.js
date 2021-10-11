@@ -11,3 +11,7 @@ const episodes_div = document.getElementById("episodes");
 series.episodes.forEach(episode => {
     episodes_div.innerHTML += `<hx-episode href="${episode.source}"><p>${episode.title}</p><span>⯈</span></hx-episode>\n`;
 });
+
+document.getElementById("copy").onclick = () => {
+    navigator.clipboard.writeText(parent.location.origin + parent.location.pathname + `?select=${root}`);
+}

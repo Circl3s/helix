@@ -39,6 +39,24 @@
         #episodes {
             margin-top: 4px;
         }
+
+        #details {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        #copy {
+            cursor: pointer;
+            padding: 2px;
+            font-size: 1.2em;
+            border-radius: 50%;
+            transition-duration: 200ms;
+        }
+
+        #copy:hover {
+            background-color: #2e324e;
+        }
     </style>
 </head>
 <body>
@@ -49,7 +67,14 @@
     </header>
     <main>
         <div id="details">
-            <p>Tags: <span id="tags"></span></p>
+            <div>
+                <p>Tags: <span id="tags"></span></p>
+            </div>
+            <div>
+                <div id="copy">
+                    🔗
+                </div>
+            </div>
         </div>
         <div id="episodes">
             <h2>Episodes</h2>
