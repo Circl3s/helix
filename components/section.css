@@ -1,5 +1,7 @@
 section {
     padding: 8px;
+    width: 100%;
+    position: relative;
 }
 
 slot {
@@ -17,6 +19,7 @@ slot::-webkit-scrollbar {
 .flex {
     display: flex;
     flex-direction: row;
+    scroll-behavior: smooth;
 }
 
 h2 {
@@ -26,3 +29,41 @@ h2 {
     margin-bottom: 8px;
     margin-top: 8px;
 }
+
+.scrollbtn {
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin: 4px;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 0;
+    top: calc(50% - 24px);
+    background-color: #12141f;
+    color: #2e324e;
+    font-size: 30px;
+    transition-duration: 200ms;
+    transition-property: color, background;
+    display: none;
+    font-weight: bold;
+}
+
+.scrollbtn:focus {
+    outline: none;
+}
+
+.scrollbtn:hover {
+    background-color: #2e324e;
+    color: #db2b39;
+}
+
+.left {
+    left: 0px;
+}
+
+.right {
+    right: 16px;
+}
+

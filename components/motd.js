@@ -30,7 +30,8 @@ class MOTD extends HTMLElement {
                 console.log(check.response[0].sha);
                 if (request.response.trim() != check.response[0].sha.trim()) {
                     block.classList.add("notify");
-                    block.innerText = "New version available!"
+                    block.title = `Run "git pull" in the Helix's directory`;
+                    block.innerText = "New version available!";
                 }
             };
         };

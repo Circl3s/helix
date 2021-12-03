@@ -57,6 +57,7 @@ iframe {
     position: fixed;
     align-items: center;
     filter: drop-shadow(0px 0px 2px black);
+    z-index: 1;
 }
 
 .bar p {

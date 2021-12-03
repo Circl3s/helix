@@ -20,7 +20,7 @@ function populate(index) {
     tags.forEach(tag => {
         let element = document.createElement("hx-section");
         element.setAttribute("id", tag);
-        element.setAttribute("title", tag);
+        element.setAttribute("hx-title", tag);
         document.querySelector("main").appendChild(element);
     });
 

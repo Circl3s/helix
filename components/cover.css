@@ -18,6 +18,7 @@ a {
     align-items: center;
     margin: 8px;
     transition-duration: 200ms;
+    transition-property: transform;
 }
 
 .flex:hover {
