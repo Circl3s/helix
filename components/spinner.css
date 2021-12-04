@@ -1,0 +1,37 @@
+@keyframes spin {
+    0% {
+        transform: rotate3d(0deg);
+    }
+    75% {
+        transform: rotateX(360deg);
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+span {
+    display: inline-block;
+    width: min-content;
+    animation: spin 1s infinite ease-in-out;
+    font-weight: bold;
+    font-size: 3em;
+    color: #2e324e;
+}
+
+span:nth-of-type(2) {
+    animation-delay: 0.1s;
+}
+
+span:nth-of-type(3) {
+    animation-delay: 0.2s;
+}
+
+span:nth-of-type(4) {
+    animation-delay: 0.3s;
+}
+
+span:nth-of-type(5) {
+    animation-delay: 0.4s;
+}

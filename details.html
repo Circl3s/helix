@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 
     <script type="module" src="./components/episode.js"></script>
+    <script type="module" src="./components/spinner.js"></script>
     <style>
         body {
             background-color: #12141f !important;
@@ -57,6 +58,19 @@
         #copy:hover {
             background-color: #2e324e;
         }
+
+        #copy:active {
+            background-color: #2e324e;
+            transform: scale(0.9);
+        }
+
+        #spinner-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            color: #2e324e;
+        }
     </style>
 </head>
 <body>
@@ -76,8 +90,11 @@
                 </div>
             </div>
         </div>
+        <h2>Episodes</h2>
         <div id="episodes">
-            <h2>Episodes</h2>
+            <div id="spinner-div">
+                <hx-spinner></hx-spinner>
+            </div>
         </div>
     </main>
     <script src="details.js"></script>

@@ -11,6 +11,24 @@
     <script type="module" src="./components/cover.js"></script>
     <script type="module" src="./components/section.js"></script>
     <script type="module" src="./components/motd.js"></script>
+    <script type="module" src="./components/spinner.js"></script>
+    <style>
+        #spinner-div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0f111a;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition-property: opacity;
+            transition-duration: 0.5s;
+        }
+    </style>
 </head>
 <body>
     <div class="bar">
@@ -19,7 +37,9 @@
     </div>
     <div class="split">
         <main id="sections">
-
+            <div id="spinner-div">
+                <hx-spinner />
+            </div>
         </main>
     </div>
     <aside>

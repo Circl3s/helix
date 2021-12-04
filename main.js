@@ -1,4 +1,4 @@
-function populate(index) {
+async function populate(index) {
     let tags = new Set();
 
     let roots = Object.keys(index).sort();
@@ -45,7 +45,13 @@ request.open("GET", requestURL);
 request.responseType = "json";
 request.send();
 
-request.onload = () => {
+request.onload = async () => {
     window.index = request.response;
-    populate(window.index);
+    await populate(window.index);
+    setTimeout(() => {
+        document.querySelector("#spinner-div").style.opacity = "0";
+    }, 500);
+    setTimeout(() => {
+        document.querySelector("#spinner-div").remove()
+    }, 1000);
 }
