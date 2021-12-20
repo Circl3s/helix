@@ -12,6 +12,7 @@
     <script type="module" src="./components/section.js"></script>
     <script type="module" src="./components/motd.js"></script>
     <script type="module" src="./components/spinner.js"></script>
+    <!-- <script type="module" src="./components/nsfw.js"></script> -->
     <style>
         #spinner-div {
             position: fixed;
@@ -19,7 +20,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: #0f111a;
+            background-color: var(--bg-dark);
             z-index: 2;
             display: flex;
             flex-direction: column;
@@ -33,7 +34,7 @@
 <body>
     <div class="bar">
         <h1>Helix</h1>
-        <hx-motd />
+        <hx-motd></hx-motd>
     </div>
     <div class="split">
         <main id="sections">
@@ -45,6 +46,7 @@
     <aside>
         <iframe id="details" src="./placeholder.html" frameborder="0"></iframe>
     </aside>
+    <!-- <hx-nsfw></hx-nsfw> -->
     <script src="./main.js"></script>
 </body>
 </html>

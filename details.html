@@ -11,7 +11,7 @@
     <script type="module" src="./components/spinner.js"></script>
     <style>
         body {
-            background-color: #12141f !important;
+            background-color: var(--bg-bright) !important;
         }
 
         header {
@@ -24,7 +24,7 @@
         .gradient {
             position: relative;
             height: 100%;
-            background-image: linear-gradient(0deg, #12141f, #12141f77);
+            background-image: linear-gradient(0deg, var(--bg-bright), var(--bg-transparent));
         }
 
         #title {
@@ -52,15 +52,15 @@
             padding: 2px;
             font-size: 1.2em;
             border-radius: 50%;
-            transition-duration: 200ms;
+            transition-duration: var(--duration);
         }
 
         #copy:hover {
-            background-color: #2e324e;
+            background-color: var(--fg-secondary);
         }
 
         #copy:active {
-            background-color: #2e324e;
+            background-color: var(--fg-secondary);
             transform: scale(0.9);
         }
 
@@ -69,7 +69,7 @@
             justify-content: center;
             align-items: center;
             height: 100%;
-            color: #2e324e;
+            color: var(--fg-secondary);
         }
     </style>
 </head>
