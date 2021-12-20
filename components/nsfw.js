@@ -12,10 +12,11 @@ class NSFW extends HTMLElement {
         desc.id = "desc";
         const input = left.appendChild(document.createElement("input"));
         input.placeholder = "URL";
+        input.value = localStorage.getItem("helix-panic");
         const icon = wrapper.appendChild(document.createElement("p"));
         icon.id = "icon";
-        text.innerHTML = `Press <kbd>/</kbd> to panic`;
-        desc.innerHTML = `Panicking will pause playback, minimize the player, hide Helix's content, and open the specified URL. Press <kbd>/</kbd> again to undo.`;
+        text.innerHTML = `Press <kbd>End</kbd> to panic`;
+        desc.innerHTML = `Panicking will pause playback, minimize the player, hide Helix's content, and open the specified URL. Press <kbd>End</kbd> again to undo.`;
         icon.innerText = "👻";
 
         const camo = document.createElement("div");
@@ -28,8 +29,14 @@ class NSFW extends HTMLElement {
 
         this.shadowRoot.append(css, wrapper, camo);
 
+        input.onblur = () => {
+            if (input.value.length > 0) {
+                localStorage.setItem("helix-panic", input.value);
+            }
+        };
+
         window.addEventListener("keydown", (e) => {
-            if (e.code == "Slash") {
+            if (e.code == "End") {
                 if (camo.style.display == "none") {
                     camo.style.display = "unset";
                     try {
