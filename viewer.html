@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helix</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="./components/nsfw.js"></script>
+
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            max-height: 100vh;
+            max-width: 100vw;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" controls autoplay></video>
+    <hx-nsfw></hx-nsfw>
+    <script>
+        const ep = (new URLSearchParams(window.location.search)).get("src");
+        const video = document.getElementById("video");
+        video.src = ep
+
+        window.addEventListener("keydown", (e) => {
+            e.preventDefault();
+            switch (e.code) {
+                case "ArrowUp":
+                    video.volume += 0.1;
+                    break;
+                case "ArrowDown":
+                    video.volume -= 0.1;
+                    break;
+                case "ArrowRight":
+                    video.currentTime += 5;
+                    break;
+                case "ArrowLeft":
+                    video.currentTime -= 5;
+                    break;
+                case "Space":
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                default:
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
