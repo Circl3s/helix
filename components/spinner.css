@@ -17,7 +17,7 @@ span {
     animation: spin 1s infinite ease-in-out;
     font-weight: bold;
     font-size: 3em;
-    color: #2e324e;
+    color: var(--fg-secondary);
 }
 
 span:nth-of-type(2) {

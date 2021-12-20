@@ -1,10 +1,10 @@
 div {
     padding: 2px;
-    color: #db2b39;
+    color: var(--fg-primary);
 }
 
 .notify {
     border-radius: 4px;
-    color: #10121b;
-    background-color: #db2b39;
+    color: var(--bg-medium);
+    background-color: var(--fg-primary);
 }

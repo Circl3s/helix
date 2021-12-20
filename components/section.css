@@ -24,7 +24,7 @@ slot::-webkit-scrollbar {
 
 h2 {
     text-transform: capitalize;
-    color: #db2b39;
+    color: var(--fg-primary);
     font-size: 2em;
     margin-bottom: 8px;
     margin-top: 8px;
@@ -41,10 +41,10 @@ h2 {
     position: absolute;
     z-index: 0;
     top: calc(50% - 24px);
-    background-color: #12141f;
-    color: #2e324e;
+    background-color: var(--bg-bright);
+    color: var(--fg-secondary);
     font-size: 30px;
-    transition-duration: 200ms;
+    transition-duration: var(--duration);
     transition-property: color, background;
     display: none;
     font-weight: bold;
@@ -55,8 +55,8 @@ h2 {
 }
 
 .scrollbtn:hover {
-    background-color: #2e324e;
-    color: #db2b39;
+    background-color: var(--fg-secondary);
+    color: var(--fg-primary);
 }
 
 .left {

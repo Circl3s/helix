@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
+:root {
+    --bg-cover: #07080d;
+    --bg-dark: #0f111a;
+    --bg-medium: #10121b;
+    --bg-bright: #12141f;
+    --bg-episode: #161825;
+
+    --fg-primary: #db2b39;
+    --fg-secondary: #2e324e;
+
+    --duration: 200ms;
+}
+
 * {
     font-family: "Fira Sans", sans-serif;
     margin: 0;
@@ -7,14 +20,14 @@
 }
 
 body {
-    background-color: #0f111a;
+    background-color: var(--bg-dark);
 }
 
 h1 {
     font-weight: bold;
     font-size: 3em;
     padding: 8px;
-    color: #db2b39;
+    color: var(--fg-primary);
 }
 
 h3 {
@@ -23,7 +36,7 @@ h3 {
 }
 
 aside {
-    background-color: #12141f;
+    background-color: var(--bg-bright);
     position: fixed;
     top: 0;
     right: 0;
@@ -50,8 +63,8 @@ iframe {
 
 .bar {
     width: 67%;
-    background-color: #10121b;
-    background: linear-gradient(45deg, #10121b 0% 75%, #db2b39 75% 76%, #10121b 76% 80%, #db2b39 80% 82%, #10121b 82% 90%, #db2b39 90%);
+    background-color: var(--bg-medium);
+    background: linear-gradient(45deg, var(--bg-medium) 0% 75%, var(--fg-primary) 75% 76%, var(--bg-medium) 76% 80%, var(--fg-primary) 80% 82%, var(--bg-medium) 82% 90%, var(--fg-primary) 90%);
     display: flex;
     flex-direction: row;
     position: fixed;
@@ -61,5 +74,5 @@ iframe {
 }
 
 .bar p {
-    color: #db2b39;
+    color: var(--fg-primary);
 }

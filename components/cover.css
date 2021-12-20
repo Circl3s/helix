@@ -10,14 +10,14 @@ a {
 
 .flex {
     max-width: 190px;
-    background-color: #07080d;
+    background-color: var(--bg-cover);
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 8px;
-    transition-duration: 200ms;
+    transition-duration: var(--duration);
     transition-property: transform;
 }
 

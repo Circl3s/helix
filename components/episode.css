@@ -5,16 +5,16 @@ a {
 }
 
 .rect {
-    background-color: #161825;
+    background-color: var(--bg-episode);
     margin: 8px;
     padding: 8px;
-    border: 2px solid #2e324e;
-    transition-duration: 200ms;
+    border: 2px solid var(--fg-secondary);
+    transition-duration: var(--duration);
     transition-property: background-color;
 }
 
 .rect:hover {
-    background-color: #2e324e;
+    background-color: var(--fg-secondary);
 }
 
 slot {
