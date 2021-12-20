@@ -5,7 +5,7 @@
     justify-content: space-between;
     position: fixed;
     width: 18rem;
-    left: -14rem;
+    left: -14.2rem;
     bottom: 20px;
     background: url("../resources/camo.svg");
     background-repeat: no-repeat, no-repeat;
@@ -18,7 +18,7 @@
     left: 0%;
 }
 
-p {
+#icon {
     padding: 0 1rem;
 }
 
@@ -35,4 +35,43 @@ p {
     display: none;
     background-color: var(--bg-dark);
     z-index: 10;
+}
+
+#left {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+p, input {
+    margin: 4px 0px;
+    padding: 0;
+}
+
+#desc {
+    font-size: 0.6em;
+}
+
+input:focus {
+    outline: none;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
+}
+
+input::placeholder {
+    color: var(--fg-secondary);
+}
+
+kbd {
+    font-family: monospace;
+    font-weight: bold;
+    background: var(--fg-secondary);
+    color: var(--fg-primary);
+    border-radius: 4px;
+    padding: 0.3em;
 }
