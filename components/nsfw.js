@@ -15,8 +15,8 @@ class NSFW extends HTMLElement {
         input.value = localStorage.getItem("helix-panic");
         const icon = wrapper.appendChild(document.createElement("p"));
         icon.id = "icon";
-        text.innerHTML = `Press <kbd>End</kbd> to panic`;
-        desc.innerHTML = `Panicking will pause playback, minimize the player, hide Helix's content, and open the specified URL. Press <kbd>End</kbd> again to undo.`;
+        text.innerHTML = `Press <kbd>Pause</kbd> to panic`;
+        desc.innerHTML = `Panicking will pause playback, minimize the player, hide Helix's content, and open the specified URL. Press <kbd>Pause</kbd> again to undo.`;
         icon.innerText = "👻";
 
         const camo = document.createElement("div");
@@ -36,7 +36,7 @@ class NSFW extends HTMLElement {
         };
 
         window.addEventListener("keydown", (e) => {
-            if (e.code == "End") {
+            if (e.code == "Pause") {
                 if (camo.style.display == "none") {
                     camo.style.display = "unset";
                     try {

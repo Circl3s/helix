@@ -19,6 +19,7 @@ a {
     margin: 8px;
     transition-duration: var(--duration);
     transition-property: transform;
+    filter: var(--shadow);
 }
 
 .flex:hover {

@@ -12,6 +12,7 @@
     background-size: cover, cover;
     color: white;
     transition-duration: var(--duration);
+    filter: var(--shadow);
 }
 
 #floater:hover {
@@ -54,6 +55,7 @@ p, input {
 
 input:focus {
     outline: none;
+    border-color: var(--fg-primary);
 }
 
 input {
@@ -61,6 +63,7 @@ input {
     border-bottom: 1px solid white;
     background: transparent;
     color: white;
+    transition-duration: var(--duration);
 }
 
 input::placeholder {
