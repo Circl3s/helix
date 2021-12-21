@@ -45,6 +45,7 @@ aside {
     height: 100vh;
     width: 33%;
     filter: var(--shadow);
+    z-index: 1;
 }
 
 iframe {

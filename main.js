@@ -1,10 +1,13 @@
-async function populate(index) {
+async function populate(index, filter) {
+    document.querySelector("main").innerHTML = "";
     let tags = new Set();
 
     let roots = Object.keys(index).sort();
     new_index = new Object();
     roots.forEach(root => {
-        new_index[root] = index[root];
+        if (index[root].title.toLowerCase().includes(filter.toLowerCase())) {
+            new_index[root] = index[root];
+        }
     });
 
     index = Object.entries(new_index);
@@ -47,7 +50,7 @@ request.send();
 
 request.onload = async () => {
     window.index = request.response;
-    await populate(window.index);
+    await populate(window.index, "");
     setTimeout(() => {
         document.querySelector("#spinner-div").style.opacity = "0";
     }, 500);
@@ -55,3 +58,7 @@ request.onload = async () => {
         document.querySelector("#spinner-div").remove()
     }, 1000);
 }
+
+window.addEventListener("search", (e) => {
+    populate(window.index, e.detail);
+});

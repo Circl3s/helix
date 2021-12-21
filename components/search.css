@@ -1,0 +1,32 @@
+input {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: calc(100% - 1px);
+    background-color: transparent;
+    text-align: center;
+    color: white;
+    border: none;
+    border-bottom: 1px solid var(--bg-medium);
+    transition-duration: var(--duration);
+}
+
+::placeholder {
+    color: var(--fg-secondary);
+}
+
+input:hover {
+    font-size: 2.5em;
+}
+
+input:focus {
+    width: 100%;
+    font-size: 2.5em;
+    font-weight: light;
+    outline: none;
+    background-color: var(--bg-medium);
+    border-color: var(--fg-primary);
+}

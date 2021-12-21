@@ -13,6 +13,7 @@
     <script type="module" src="./components/motd.js"></script>
     <script type="module" src="./components/spinner.js"></script>
     <script type="module" src="./components/nsfw.js"></script>
+    <script type="module" src="./components/search.js"></script>
     <style>
         #spinner-div {
             position: fixed;
@@ -35,18 +36,19 @@
     <div class="bar">
         <h1>Helix</h1>
         <hx-motd></hx-motd>
+        <input is="hx-search" id="search"></input>
     </div>
     <div class="split">
         <main id="sections">
-            <div id="spinner-div">
-                <hx-spinner />
-            </div>
         </main>
     </div>
     <aside>
         <iframe id="details" src="./placeholder.html" frameborder="0"></iframe>
     </aside>
     <hx-nsfw></hx-nsfw>
+    <div id="spinner-div">
+        <hx-spinner />
+    </div>
     <script src="./main.js"></script>
 </body>
 </html>
