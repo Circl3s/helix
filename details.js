@@ -1,7 +1,7 @@
 const root = (new URLSearchParams(window.location.search)).get("series");
 
 if (parent.index == undefined) {
-    window.location.replace(`../?select=${root}`);
+    window.location.replace(`./?select=${root}`);
 }
 
 const series = parent.index[root];
