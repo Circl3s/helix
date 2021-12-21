@@ -10,7 +10,7 @@ input {
     text-align: center;
     color: white;
     border: none;
-    border-bottom: 1px solid var(--bg-medium);
+    border-bottom: 1px solid transparent;
     transition-duration: var(--duration);
 }
 
