@@ -1,16 +1,12 @@
 input {
-    position: absolute;
-    right: 0;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-    height: calc(100% - 1px);
-    background-color: transparent;
-    text-align: center;
+    display: flex;
+    /* flex-grow: 1; */
+    margin: auto;
+    padding: 2px 4px;
+    border: 2px solid transparent;
+    border-radius: var(--rounded);
+    background-color: var(--bg-dark);
     color: white;
-    border: none;
-    border-bottom: 1px solid transparent;
     transition-duration: var(--duration);
 }
 
@@ -18,15 +14,14 @@ input {
     color: var(--fg-secondary);
 }
 
-input:hover {
-    font-size: 2.5em;
-}
-
 input:focus {
-    width: 100%;
-    font-size: 2.5em;
-    font-weight: light;
     outline: none;
     background-color: var(--bg-medium);
     border-color: var(--fg-primary);
+}
+
+input:not(:placeholder-shown):not(:focus) {
+    border-color: var(--fg-primary);
+    border-width: 1px;
+    color: var(--fg-secondary);
 }

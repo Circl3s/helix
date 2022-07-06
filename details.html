@@ -10,6 +10,26 @@
     <script type="module" src="./components/episode.js"></script>
     <script type="module" src="./components/spinner.js"></script>
     <style>
+        @keyframes zoomout {
+            0% {
+                background-size: 110%;
+            }
+            100% {
+                background-size: 100%;
+            }
+        }
+
+        @keyframes flyin {
+            0% {
+                opacity: 0;
+                bottom: 20px;
+            }
+            100% {
+                opacity: 1;
+                bottom: 0;
+            }
+        }
+
         body {
             background-color: var(--bg-bright) !important;
         }
@@ -19,6 +39,7 @@
             background-position: top;
             background-size: cover;
             background-repeat: no-repeat;
+            animation: zoomout 5s ease-out 1;
         }
 
         .gradient {
@@ -30,9 +51,10 @@
         #title {
             position: absolute;
             bottom: 0;
+            animation: flyin 0.5s 1;
         }
 
-        main {
+        .main {
             padding: 8px;
             color: white;
         }
@@ -79,7 +101,7 @@
             <h1 id="title"></h1>
         </div>
     </header>
-    <main>
+    <div class="main">
         <div id="details">
             <div>
                 <p>Tags: <span id="tags"></span></p>
@@ -96,7 +118,7 @@
                 <hx-spinner></hx-spinner>
             </div>
         </div>
-    </main>
+    </div class="main">
     <script src="details.js"></script>
 </body>
 </html>

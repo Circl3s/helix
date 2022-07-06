@@ -2,6 +2,7 @@ img {
     width: 190px;
     height: 280px;
     object-fit: cover;
+    border-radius: var(--rounded);
 }
 
 a {
@@ -20,6 +21,7 @@ a {
     transition-duration: var(--duration);
     transition-property: transform;
     filter: var(--shadow);
+    border-radius: var(--rounded);
 }
 
 .flex:hover {

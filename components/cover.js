@@ -30,6 +30,7 @@ class Cover extends HTMLElement {
             e.preventDefault();
 
             document.querySelector("#details").setAttribute("src", this.getAttribute("href"));
+            document.querySelector("#modal").show();
         }
 
         this.shadowRoot.append(css, wrapper);

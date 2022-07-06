@@ -1,11 +1,11 @@
 #floater {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
     position: fixed;
     width: 18rem;
-    left: -14.2rem;
+    right: -14.2rem;
     bottom: 20px;
     background: url("../resources/camo.svg");
     background-repeat: no-repeat, no-repeat;
@@ -13,10 +13,11 @@
     color: white;
     transition-duration: var(--duration);
     filter: var(--shadow);
+    border-radius: var(--rounded);
 }
 
 #floater:hover {
-    left: 0%;
+    right: 0%;
 }
 
 #icon {

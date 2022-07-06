@@ -1,4 +1,3 @@
-// @ts-check
 class Search extends HTMLInputElement {
     constructor() {
         super();

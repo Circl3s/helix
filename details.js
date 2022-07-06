@@ -8,7 +8,7 @@ const series = parent.index[root];
 
 document.getElementById("tags").innerText = series.tags.join(", ");
 document.getElementById("title").innerText = series.title;
-document.getElementById("header").style.backgroundImage = `url(${series.cover})`;
+document.getElementById("header").style.backgroundImage = `url(${series?.bg ?? series.cover})`;
 
 const episodes_div = document.getElementById("episodes");
 

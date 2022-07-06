@@ -8,7 +8,8 @@ a {
     background-color: var(--bg-episode);
     margin: 8px;
     padding: 8px;
-    border: 2px solid var(--fg-secondary);
+    border-radius: var(--rounded);
+    filter: var(--shadow);
     transition-duration: var(--duration);
     transition-property: background-color;
 }

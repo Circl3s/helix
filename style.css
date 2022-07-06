@@ -13,16 +13,33 @@
 
     --duration: 200ms;
     --shadow: drop-shadow(0px 0px 2px black);
+
+    --rounded: 12px;
 }
 
 * {
     font-family: "Fira Sans", sans-serif;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    width: 100%;
 }
 
 body {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-cover);
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 100%;
+    column-gap: 0px;
+    row-gap: 0px;
 }
 
 h1 {
@@ -34,27 +51,51 @@ h1 {
 
 h3 {
     text-align: center;
-    margin: 4px;
+    margin: 0px;
 }
 
 aside {
-    background-color: var(--bg-bright);
-    position: fixed;
-    top: 0;
-    right: 0;
     height: 100vh;
-    width: 33%;
-    filter: var(--shadow);
-    z-index: 1;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    color: var(--fg-primary);
+    overflow: auto;
+}
+
+nav > a {
+    padding: 8px;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--fg-primary);
+    transition-duration: var(--duration);
+}
+
+nav > a:hover {
+    padding-left: 16px;
+    background-color: var(--bg-dark);
 }
 
 iframe {
     width: 100%;
     height: 100%;
+    border-radius: var(--rounded);
 }
 
 #sections {
-    width: 67%;
+    grid-column: 2;
+    height: 100vh;
+    overflow-y: scroll;
+    border-radius: var(--rounded);
+    background-color: var(--bg-dark);
 }
 
 .split {
@@ -65,17 +106,31 @@ iframe {
 }
 
 .bar {
-    width: 67%;
+    width: 100%;
     background-color: var(--bg-medium);
     background: linear-gradient(45deg, var(--bg-medium) 0% 75%, var(--fg-primary) 75% 76%, var(--bg-medium) 76% 80%, var(--fg-primary) 80% 82%, var(--bg-medium) 82% 90%, var(--fg-primary) 90%);
     display: flex;
     flex-direction: row;
-    position: fixed;
     align-items: center;
     filter: var(--shadow);
     z-index: 1;
 }
 
+.banner {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .bar p {
     color: var(--fg-primary);
+}
+
+.card {
+    background-color: var(--bg-bright);
+    border-radius: var(--rounded);
+    filter: var(--shadow);
+    width: 45vw;
+    height: 75vh;
 }

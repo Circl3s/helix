@@ -14,6 +14,7 @@
     <script type="module" src="./components/spinner.js"></script>
     <script type="module" src="./components/nsfw.js"></script>
     <script type="module" src="./components/search.js"></script>
+    <script type="module" src="./components/modal.js"></script>
     <style>
         #spinner-div {
             position: fixed;
@@ -33,22 +34,29 @@
     </style>
 </head>
 <body>
-    <div class="bar">
-        <h1>Helix</h1>
-        <hx-motd></hx-motd>
-        <input is="hx-search" id="search"></input>
-    </div>
-    <div class="split">
-        <main id="sections">
-        </main>
-    </div>
-    <aside>
-        <iframe id="details" src="./placeholder.html" frameborder="0"></iframe>
-    </aside>
+    <main>
+        <aside>
+            <div class="banner">
+                <h1>Helix</h1>
+                <hx-motd></hx-motd>
+                <input is="hx-search" id="search"></input>
+            </div>
+            <nav>
+            </nav>
+        </aside>
+        <div id="sections">
+
+        </div>
+    </main>
     <hx-nsfw></hx-nsfw>
     <div id="spinner-div">
         <hx-spinner />
     </div>
+    <hx-modal id="modal">
+        <div class="card">
+            <iframe id="details" src="./placeholder.html" frameborder="0"></iframe>
+        </div>
+    </hx-modal>
     <script src="./main.js"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 async function populate(index, filter) {
-    document.querySelector("main").innerHTML = "";
+    document.querySelector("#sections").innerHTML = "";
+    document.querySelector("nav").innerHTML = "";
     let tags = new Set();
 
     let roots = Object.keys(index).sort();
-    new_index = new Object();
+    let new_index = new Object();
     roots.forEach(root => {
         if (index[root].title.toLowerCase().includes(filter.toLowerCase())) {
             new_index[root] = index[root];
@@ -21,10 +22,15 @@ async function populate(index, filter) {
     tags = [...tags].sort();
 
     tags.forEach(tag => {
-        let element = document.createElement("hx-section");
-        element.setAttribute("id", tag);
-        element.setAttribute("hx-title", tag);
-        document.querySelector("main").appendChild(element);
+        let section = document.createElement("hx-section");
+        section.setAttribute("id", tag);
+        section.setAttribute("hx-title", tag);
+        document.querySelector("#sections").appendChild(section);
+
+        let link = document.createElement("a");
+        link.setAttribute("href", `#${tag}`);
+        link.innerText = tag;
+        document.querySelector("nav").appendChild(link);
     });
 
     index.forEach(series => {
@@ -53,6 +59,10 @@ request.onload = async () => {
     await populate(window.index, "");
     setTimeout(() => {
         document.querySelector("#spinner-div").style.opacity = "0";
+        if (selected) {
+            let m = document.querySelector("#modal");
+            m.show();
+        }
     }, 500);
     setTimeout(() => {
         document.querySelector("#spinner-div").remove()
