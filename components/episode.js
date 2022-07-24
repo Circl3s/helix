@@ -9,7 +9,7 @@ class Episode extends HTMLElement {
         // <hx-episode src="link/to/source" title="Episode Title"></hx-episode>
         let link = `viewer.html?src=${this.getAttribute("src")}`;
         let thumb = this.getAttribute("src") + ".jpg";
-        let preview = this.getAttribute("src") + ".apng";
+        let preview = this.getAttribute("src") + ".webp";
 
         let wrapper = document.createElement("a");
         wrapper.setAttribute("href", link);
