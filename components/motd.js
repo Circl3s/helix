@@ -31,11 +31,7 @@ class MOTD extends HTMLElement {
                 check.send();
 
                 check.onload = () => {
-                    console.log(activeBranch)
-                    console.table(check.response)
                     let branch = check.response.find(b => b.name.trim() == activeBranch.trim())
-                    console.log(request.response);
-                    console.log(branch.commit.sha);
                     if (request.response.trim() != branch.commit.sha.trim()) {
                         block.classList.add("notify");
                         block.title = `Run "git pull" in the Helix's directory`;

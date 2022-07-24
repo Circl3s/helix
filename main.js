@@ -66,8 +66,7 @@ request.onload = async () => {
     setTimeout(() => {
         document.querySelector("#spinner-div").style.opacity = "0";
         if (selected) {
-            let m = document.querySelector("#modal");
-            m.show();
+            document.querySelector("#modal").show();
         }
     }, 500);
     setTimeout(() => {
@@ -77,4 +76,8 @@ request.onload = async () => {
 
 window.addEventListener("search", (e) => {
     populate(window.index, e.detail);
+});
+
+window.addEventListener("modal-hide", (e) => {
+    document.querySelector("#details").setAttribute("src", "./placeholder.html");
 });

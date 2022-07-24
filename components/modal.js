@@ -15,17 +15,25 @@ class Modal extends HTMLElement {
 
         wrapper.onclick = () => {
             this.hide();
-        }
+        };
 
         this.shadowRoot.append(wrapper, css);
     }
 
     show() {
         this.shadowRoot.querySelector(".wrapper").classList.add("show");
+        this.dispatchEvent(new CustomEvent("modal-show", {
+            bubbles: true,
+            composed: true
+        }));
     }
 
     hide() {
         this.shadowRoot.querySelector(".wrapper").classList.remove("show");
+        this.dispatchEvent(new CustomEvent("modal-hide", {
+            bubbles: true,
+            composed: true
+        }));
     }
 }
 

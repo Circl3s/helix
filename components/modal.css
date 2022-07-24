@@ -18,5 +18,5 @@
 
 .show {
     display: flex;
-    animation: fade-in 0.5s forwards;
+    animation: fade-in var(--duration) forwards;
 }
