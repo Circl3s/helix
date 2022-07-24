@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ "$PWD" =~ helix/scripts ]]; then
+if [[ "$PWD" = *"helix/scripts" ]]; then
     path="../content/**/*.mp4"
-elif [[ "$PWD" =~ helix ]]; then
+elif [[ "$PWD" = *"helix" ]]; then
     path="./content/**/*.mp4"
 fi
 
