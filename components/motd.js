@@ -11,30 +11,39 @@ class MOTD extends HTMLElement {
         css.setAttribute("rel", "stylesheet");
         css.setAttribute("href", "./components/motd.css");
 
-        let requestURL = "./.git/refs/heads/master";
-        let request = new XMLHttpRequest();
-        request.open("GET", requestURL);
+        let activeBranch = "master";
 
-        request.send();
+        fetch("./.git/HEAD").then(response => response.text()).then(text => {
+            activeBranch = text.split("/")[text.split("/").length - 1];
 
-        request.onload = () => {
-            let checkURL = "https://api.github.com/repos/Circl3s/helix/commits";
-            let check = new XMLHttpRequest();
-            check.open("GET", checkURL);
-            check.responseType = "json"
+            let requestURL = `./.git/refs/heads/${activeBranch}`;
+            let request = new XMLHttpRequest();
+            request.open("GET", requestURL);
 
-            check.send();
+            request.send();
 
-            check.onload = () => {
-                console.log(request.response);
-                console.log(check.response[0].sha);
-                if (request.response.trim() != check.response[0].sha.trim()) {
-                    block.classList.add("notify");
-                    block.title = `Run "git pull" in the Helix's directory`;
-                    block.innerText = "New version available!";
-                }
+            request.onload = () => {
+                let checkURL = "https://api.github.com/repos/Circl3s/helix/branches";
+                let check = new XMLHttpRequest();
+                check.open("GET", checkURL);
+                check.responseType = "json"
+
+                check.send();
+
+                check.onload = () => {
+                    console.log(activeBranch)
+                    console.table(check.response)
+                    let branch = check.response.find(b => b.name.trim() == activeBranch.trim())
+                    console.log(request.response);
+                    console.log(branch.commit.sha);
+                    if (request.response.trim() != branch.commit.sha.trim()) {
+                        block.classList.add("notify");
+                        block.title = `Run "git pull" in the Helix's directory`;
+                        block.innerText = "New version available!";
+                    }
+                };
             };
-        };
+        });
 
         this.shadowRoot.append(css, block);
     }
