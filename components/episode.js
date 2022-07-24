@@ -15,8 +15,13 @@ class Episode extends HTMLElement {
 
         let rect = wrapper.appendChild(document.createElement("div"));
         rect.setAttribute("class", "rect");
+        rect.style.backgroundImage = `url(${this.getAttribute("thumb")})`;
 
-        let slot = rect.appendChild(document.createElement("slot"));
+        let gradient = rect.appendChild(document.createElement("div"));
+        gradient.classList.add("gradient");
+
+        let title = gradient.appendChild(document.createElement("p"));
+        title.innerText = this.getAttribute("title");
 
         const css = document.createElement("link");
         css.setAttribute("rel", "stylesheet");

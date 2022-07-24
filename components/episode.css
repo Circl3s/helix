@@ -1,26 +1,35 @@
 a {
+    display: flex;
     color: white;
     text-decoration: none;
     font-size: 1.2em;
+    min-width: 240px;
+    height: 25vh;
+    margin: 8px;
 }
 
 .rect {
+    background-size: cover;
     background-color: var(--bg-episode);
-    margin: 8px;
-    padding: 8px;
     border-radius: var(--rounded);
     filter: var(--shadow);
+    width: 100%;
+}
+
+.gradient:hover {
+    color: var(--fg-primary);
+    padding-left: 8px;
+}
+
+.gradient {
     transition-duration: var(--duration);
-    transition-property: background-color;
+    height: 100%;
+    border-radius: var(--rounded);
+    background-image: linear-gradient(0deg, var(--bg-episode), var(--bg-transparent));
 }
 
-.rect:hover {
-    background-color: var(--fg-secondary);
-}
-
-slot {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+p {
+    margin: 8px;
+    position: absolute;
+    bottom: 0;
 }
