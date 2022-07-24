@@ -6,8 +6,10 @@ class Episode extends HTMLElement {
 
         this.attachShadow({mode: "open"});
 
-        // <hx-episode href="link/to/source">Episode Title</hx-episode>
-        let link = this.getAttribute("href");
+        // <hx-episode src="link/to/source" title="Episode Title"></hx-episode>
+        let link = `viewer.html?src=${this.getAttribute("src")}`;
+        let thumb = this.getAttribute("src") + ".jpg";
+        let preview = this.getAttribute("src") + ".apng";
 
         let wrapper = document.createElement("a");
         wrapper.setAttribute("href", link);
@@ -15,7 +17,7 @@ class Episode extends HTMLElement {
 
         let rect = wrapper.appendChild(document.createElement("div"));
         rect.setAttribute("class", "rect");
-        rect.style.backgroundImage = `url(${this.getAttribute("thumb")})`;
+        rect.style.backgroundImage = `url(${thumb})`;
 
         let gradient = rect.appendChild(document.createElement("div"));
         gradient.classList.add("gradient");
@@ -26,6 +28,9 @@ class Episode extends HTMLElement {
         const css = document.createElement("link");
         css.setAttribute("rel", "stylesheet");
         css.setAttribute("href", "./components/episode.css");
+
+        gradient.onmouseenter = () => rect.style.backgroundImage = `url(${preview})`;
+        gradient.onmouseleave = () => rect.style.backgroundImage = `url(${thumb})`;
 
         this.shadowRoot.append(css, wrapper);
     }

@@ -12,6 +12,7 @@ if [ -z ${path+x} ]; then
 else
     for f in $path
     do
+        ffmpeg -n -ss 00:01:00 -i $f -frames:v 1 -vf "scale=-1:240" $f.jpg
         ffmpeg -n -ss 00:01:00 -i $f -plays 0 -vf "select=not(mod(n\, 2880)), scale=-1:240, setpts=(1/120)*PTS" $f.apng
     done
 fi
