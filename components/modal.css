@@ -1,3 +1,8 @@
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 .wrapper {
     position: fixed;
     top: 0;
@@ -9,11 +14,9 @@
     display: none;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-    transition: opacity var(--duration) ease-in-out;
 }
 
 .show {
     display: flex;
-    opacity: 1;
+    animation: fade-in 0.5s forwards;
 }

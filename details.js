@@ -6,9 +6,17 @@ if (parent.index == undefined) {
 
 const series = parent.index[root];
 
+if (!series.bg) {
+    series.bg = series.cover;
+    fetch(`/content/${root}/bg.jpg`, {method: "HEAD"}).then(response => {
+        series.bg = response.ok ? `/content/${root}/bg.jpg` : series.bg
+        document.getElementById("header").style.backgroundImage = `url(${series.bg})`;
+    })
+}
+
 document.getElementById("tags").innerText = series.tags.join(", ");
 document.getElementById("title").innerText = series.title;
-document.getElementById("header").style.backgroundImage = `url(${series?.bg ?? series.cover})`;
+document.getElementById("header").style.backgroundImage = `url(${series.bg})`;
 
 const episodes_div = document.getElementById("episodes");
 

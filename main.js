@@ -21,6 +21,11 @@ async function populate(index, filter) {
 
     tags = [...tags].sort();
 
+    index.map(series => {
+        series[1].cover = series[1]?.cover ?? `/content/${series[0]}/cover.jpg`;
+        return series;
+    })
+
     tags.forEach(tag => {
         let section = document.createElement("hx-section");
         section.setAttribute("id", tag);
@@ -34,9 +39,10 @@ async function populate(index, filter) {
     });
 
     index.forEach(series => {
+        
         series[1].tags.forEach(tag => {
             let element = document.createElement("hx-cover",);
-            element.setAttribute("img", series[1].cover);
+            element.setAttribute("img", series[1]?.cover);
             element.setAttribute("href", `details.html?series=${series[0]}`);
             let title = element.appendChild(document.createElement("h3"));
             title.innerText = series[1].title;

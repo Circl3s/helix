@@ -13,7 +13,7 @@
     color: white;
     transition-duration: var(--duration);
     filter: var(--shadow);
-    border-radius: var(--rounded);
+    border-radius: var(--rounded) 0 0 var(--rounded);
 }
 
 #floater:hover {
