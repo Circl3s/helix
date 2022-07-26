@@ -22,7 +22,7 @@ async function populate(index, filter) {
     tags = [...tags].sort();
 
     index.map(series => {
-        series[1].cover = series[1]?.cover ?? `/content/${series[0]}/cover.jpg`;
+        series[1].cover = series[1].cover == "" ? `/content/${series[0]}/cover.jpg` : series[1].cover;
         return series;
     })
 

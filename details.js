@@ -6,7 +6,7 @@ if (parent.index == undefined) {
 
 const series = parent.index[root];
 
-if (!series.bg) {
+if (series.bg == "") {
     series.bg = series.cover;
     fetch(`/content/${root}/bg.jpg`, {method: "HEAD"}).then(response => {
         series.bg = response.ok ? `/content/${root}/bg.jpg` : series.bg

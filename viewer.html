@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
 
     <script type="module" src="./components/nsfw.js"></script>
-
     <style>
         body {
             width: 100vw;
@@ -32,8 +31,11 @@
         const video = document.getElementById("video");
         video.src = ep
 
+        video.onfocus = () => {
+            video.blur();
+        }
+
         window.addEventListener("keydown", (e) => {
-            e.preventDefault();
             switch (e.code) {
                 case "ArrowUp":
                     video.volume += 0.1;
