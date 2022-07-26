@@ -22,7 +22,7 @@ const episodes_div = document.getElementById("episodes");
 
 try {
     series.episodes.forEach(episode => {
-        episodes_div.innerHTML += `<hx-episode src="${episode.source}" title="${episode.title}"></hx-episode>\n`;
+        episodes_div.innerHTML += `<hx-episode src="${episode.source}" hx-title="${episode.title}"></hx-episode>\n`;
     });
 } catch {
     episodes_div.innerHTML += `<p>No episodes found</p>\n`;

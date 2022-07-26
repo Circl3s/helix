@@ -6,7 +6,7 @@ class Episode extends HTMLElement {
 
         this.attachShadow({mode: "open"});
 
-        // <hx-episode src="link/to/source" title="Episode Title"></hx-episode>
+        // <hx-episode src="link/to/source" hx-title="Episode Title"></hx-episode>
         let link = `viewer.html?src=${this.getAttribute("src")}`;
         let thumb = this.getAttribute("src") + ".jpg";
         let preview = this.getAttribute("src") + ".webp";
@@ -23,7 +23,7 @@ class Episode extends HTMLElement {
         gradient.classList.add("gradient");
 
         let title = gradient.appendChild(document.createElement("p"));
-        title.innerText = this.getAttribute("title");
+        title.innerText = this.getAttribute("hx-title");
 
         const css = document.createElement("link");
         css.setAttribute("rel", "stylesheet");
