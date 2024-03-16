@@ -32,7 +32,7 @@ try {
     document.getElementById("vlc").style.display = "none";
 } finally {
     document.getElementById("spinner-div").remove();
-    document.getElementById("vlc").setAttribute("href", encodeURIComponent(m3uString));
+    document.getElementById("vlc").setAttribute("href", m3uString);
     document.getElementById("vlc").setAttribute("name", series.title);
 }
 
