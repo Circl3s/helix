@@ -9,6 +9,7 @@
 
     <script type="module" src="./components/episode.js"></script>
     <script type="module" src="./components/spinner.js"></script>
+    <script type="module" src="./components/vlc.js"></script>
     <style>
         @keyframes zoomout {
             0% {
@@ -79,6 +80,7 @@
         }
 
         #copy {
+            margin: 0px 8px;
             cursor: pointer;
             padding: 2px;
             font-size: 1.2em;
@@ -115,7 +117,8 @@
             <div>
                 <p>Tags: <span id="tags"></span></p>
             </div>
-            <div>
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <hx-vlc id="vlc"></hx-vlc>
                 <div id="copy">
                     🔗
                 </div>

@@ -1,11 +1,12 @@
 class VLC extends HTMLElement {
-    static get observedAttributes() { return ['href']; }
+    static get observedAttributes() { return ['href', 'name']; }
 
     constructor() {
         super();
 
         // <hx-vlc href="link-to-video"></hx-vlc>
-        let link = this.getAttribute("href");
+        let link = this.getAttribute("href"),
+            name = this.getAttribute("name");
 
         this.attachShadow({mode: "open"});
 
@@ -26,22 +27,29 @@ class VLC extends HTMLElement {
         css.setAttribute("href", "./components/vlc.css");
 
         this.shadowRoot.append(css, button);
-        this.updateM3U(link);
+        this.updateM3U(link, name);
     }
 
-    updateM3U(link) {
+    updateM3U(link, name) {
         let dataURL = "data:application/x-mpegURL," + encodeURIComponent(`#EXTM3U\n${link}`);
-        let path = new URL(link).pathname.split("/");
-        let name = path.length > 1 ? path.slice(path.length - 2).join("-") : path[path.length - 1];
-        name = name.substring(0, name.lastIndexOf('.')) || name
+        if (Boolean(name) == false) {
+            try {
+                let path = new URL(link).pathname.split("/");
+                name = path.length > 1 ? path.slice(path.length - 2).join("-") : path[path.length - 1];
+                name = name.substring(0, name.lastIndexOf('.')) || name;
+            } catch {
+                name = "helix-series"
+            }
+        }
         this.shadowRoot.querySelector("a").setAttribute("href", dataURL);
         this.shadowRoot.querySelector("a").setAttribute("download", `${name}.vlc`);
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        let link = this.getAttribute("href");
+        let link = this.getAttribute("href"),
+            title = this.getAttribute("name");
 
-        this.updateM3U(link);
+        this.updateM3U(link, title);
     }
 }
 
