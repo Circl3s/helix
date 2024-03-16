@@ -1,0 +1,22 @@
+button {
+    margin: 8px;
+    border: none;
+    height: calc(var(--rounded) * 2);
+    border-radius: var(--rounded);
+    background-color: var(--fg-primary);
+    color: var(--bg-dark);
+    transition-duration: var(--duration);
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+    padding: 0px 4px;
+}
+
+button:hover {
+    background-color: #e47b00;
+    color: var(--bg-dark);
+}

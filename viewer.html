@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="style.css">
 
     <script type="module" src="./components/nsfw.js"></script>
+    <script type="module" src="./components/vlc.js"></script>
     <style>
         body {
             width: 100vw;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
@@ -25,11 +27,14 @@
 </head>
 <body>
     <video id="video" controls></video>
+    <hx-vlc id="vlc"></hx-vlc>
     <hx-nsfw></hx-nsfw>
     <script>
         const ep = (new URLSearchParams(window.location.search)).get("src");
         const video = document.getElementById("video");
-        video.src = ep
+        const vlc = document.getElementById("vlc");
+        video.src = ep;
+        vlc.setAttribute("href", window.location.protocol + "//" + window.location.host + ep);
 
         video.onfocus = () => {
             video.blur();
